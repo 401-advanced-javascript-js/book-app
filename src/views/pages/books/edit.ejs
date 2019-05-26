@@ -1,0 +1,22 @@
+<form class="edit-form form" action="<%= formAction === 'create' ? '/add' : `/update/${book.id}` %>" method="post">
+
+  <fieldset>
+    <!-- put = update existing book in DB, post = add book to DB -->
+    <input name="_method" type="hidden" value="<%= formAction === 'update' ? 'put' : 'post' %>">
+
+    <input class="input-user-enters-text" type="text" name="title" value="<%= book.title %>" placeholder="Book Title" required>
+
+    <input class="input-user-enters-text" type="text" name="author" value="<%= book.author %>" placeholder="Book Author" required>
+
+    <input class="input-user-enters-text" type="text" name="isbn" value="<%= book.isbn %>" placeholder="Book ISBN">
+
+    <input class="input-user-enters-text" type="text" name="image_url" value="<%= book.image_url %>" placeholder="Book Cover Image URL">
+
+    <textarea class="input-user-enters-text" rows="5" name="description" placeholder="Book Description"><%= book.description %></textarea>
+
+    <input class="input-user-enters-text" type="text" name="bookshelf" value="" placeholder="Enter a Bookshelf Name">
+
+    <button class="medium-btn" type="submit"><%= formAction === 'create' ? 'Save' : 'Update' %> Book</button>
+  </fieldset>
+
+</form>
