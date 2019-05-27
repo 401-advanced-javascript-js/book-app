@@ -5,31 +5,24 @@ const router = express.Router();
 const superagent = require('superagent');
 const dbModelFinder = require('../../middleware/db-model-finder.js');
 
+const addBook = require('./handlers/addBook.js');
+const getBooksFromDB = require('./handlers/getBooksFromDB.js');
+const getSingleBook = require('./handlers/getSingleBook.js');
 
 router.use(dbModelFinder);
 
 // ROUTES
 
+router.post('/add', addBook);
 // get routes (send information out)
-router.get('/', getBooksFromDatabase);
-
+router.get('/', getBooksFromDB);
 router.get('/search', (req, res) => {
   res.render('pages/searches/new');
 });
-
-router.get('/books/details/:book_id', (req, res) => {
-  return req.db.get(req.params.book_id)
-    .then((sqlResult) => {
-      if (!sqlResult.rowCount) handleError({ status: 404 }, 'No good, the book went up in smoke', gifs.hiding, res);
-
-      res.render('pages/books/show', { book: sqlResult.rows[0] });
-    })
-    .catch((error) => console.error(error));
-});
+router.get('/books/details/:book_id', getSingleBook);
 
 // post routes (take information in and do things with that information)
 router.post('/searches/new', getBookDataFromApi);
-router.post('/add', addBook);
 
 // put routes, update information in our database
 router.put('/update/:book_id', (req, res) => {
@@ -74,28 +67,12 @@ function handleError(error, errorMessage, errorGif, res) {
   }
 }
 
-function addBook(req, res) {
-  let { title, author, isbn, image_url, description, bookshelf } = req.body;
-  let values = [author, title, isbn, image_url, description, bookshelf];
-
-  return req.db.post(values)
-    .then((sqlReturn) => res.render('pages/books/show', { book: sqlReturn.rows[0] }))
-    .catch((err) => handleError(err, 'Failed to save book.', gifs.hiding, res));
-}
-
 function deleteBook(req, res) {
   return req.db.delete(req.params.book_id)
     .then(res.redirect('/'))
     .catch((err) => handleError(err, '', gifs.noresponse, res));
 }
 
-function getBooksFromDatabase(req, res) {
-  return req.db.get()
-    .then((sqlResult) => {
-      res.render('pages/index', { sqlResults: sqlResult });
-    })
-    .catch((error) => handleError(error, 'Database hiding :(', gifs.hiding, res));
-}
 
 /**
  * Gets book data for passed in request and renders to page
