@@ -11,7 +11,8 @@ const searchPage = require('./handlers/searchPage.js');
 const getSingleBook = require('./handlers/getSingleBook.js');
 const searchAPI = require('./handlers/searchAPI.js');
 const addBook = require('./handlers/addBook.js');
-
+const updateBook = require('./handlers/updateBook.js');
+const deleteBook = require('./handlers/deleteBook.js');
 
 
 // Express middleware
@@ -54,6 +55,6 @@ router.put('/update/:book_id', updateBook);
 router.delete('/delete/:book_id', deleteBook);
 
 // catch all route
-router.get('/*', notFound);
+// router.get('/*', notFound);
 
 module.exports = router;
