@@ -6,15 +6,15 @@
 ### Author: Jagdeep Singh
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
+* [submission PR](https://github.com/401-advanced-javascript-js/book-app/pull/1)
+<!-- * [travis](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [front-end](http://xyz.com) (when applicable) -->
 
-#### Documentation
+<!-- #### Documentation
 * [api docs](http://xyz.com) (API servers)
 * [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
+* [styleguide](http://xyz.com) (React assignments) -->
 
 <!-- ### Modules
 #### `modulename.js`
@@ -31,7 +31,7 @@ Usage Notes or examples -->
 * `PORT` - Port Number
 * `DB` - set equal to 'mongo' or 'postgres' depending on which database to use
 * `DB_URL` - URL to the running postgreSQL instance/db
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `MONGO_URI` - URL to the running mongo instance/db
 
 #### Running the app
 * `npm start`
@@ -43,5 +43,7 @@ Usage Notes or examples -->
 #### Tests
 * How do you run tests?
     * `npm test`
+
+
 #### UML
 Link to an image of the UML for your application and response to events
