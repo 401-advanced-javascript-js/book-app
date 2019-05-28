@@ -3,10 +3,11 @@
 module.exports = (req, res) => {
   return req.db.get()
     .then((sqlResult) => {
+      // console.log(sqlResult);
       res.render('pages/index', { sqlResults: sqlResult });
     })
     .catch((error) => handleError(error, 'Database hiding :(', gifs.hiding, res));
-}
+};
 
 const gifs = {
   moveAlong: 'https://media.giphy.com/media/10RgsuetO4uDkY/giphy.gif',

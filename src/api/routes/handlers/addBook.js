@@ -1,9 +1,10 @@
 'use strict';
 
 module.exports = (req, res) => {
+  console.log('addBook');
   let { title, author, isbn, image_url, description, bookshelf } = req.body;
   let values = [author, title, isbn, image_url, description, bookshelf];
-
+  // console.log(req.body);
   return req.db.post(values)
     .then((sqlReturn) => res.render('pages/books/show', { book: sqlReturn.rows[0] }))
     .catch((err) => handleError(err, 'Failed to save book.', gifs.hiding, res));
