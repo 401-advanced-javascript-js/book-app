@@ -30,7 +30,7 @@ Usage Notes or examples -->
 #### `.env` requirements
 * `PORT` - Port Number
 * `DB` - set equal to 'mongo' or 'postgres' depending on which database to use
-* `DB_URL` - URL to the running postgreSQL instance/db
+* `DATABASE_URL` - URL to the running postgreSQL instance/db
 * `MONGODB_URI` - URL to the running mongo instance/db
 
 #### Running the app
