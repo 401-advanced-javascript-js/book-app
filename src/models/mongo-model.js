@@ -13,7 +13,7 @@ const mongooseOptions = {
   useCreateIndex: true,
 };
 
-mongoose.connect(process.env.MONGO_URI, mongooseOptions);
+mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
 
 // Mongo Model for others to build off of
 class MongoModel {
