@@ -1,0 +1,42 @@
+body {
+  background: #8585de30;
+  text-align: center;
+  margin: 0 auto;
+}
+
+main {
+  padding: 5vh 5vw;
+  min-height: 75vh;
+}
+
+footer {
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: left;
+  font-size: 40pt;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 25pt;
+}
+
+h4 {
+  font-size: 18pt;
+}
+
+h5, p {
+  font-size: 12pt;
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+fieldset {
+  width: 80%;
+}

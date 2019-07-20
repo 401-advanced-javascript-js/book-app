@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../../layout/head') %>
+</head>
+
+<body>
+  <header>
+    <%- include('../../layout/header') %>
+  </header>
+  <main class="content">
+    <ul id="books-container">
+      <% searchResults.forEach(book => { %>
+      <li class="book">
+        <%- include('../books/detail', { book: book, show: 'details' }) %>
+        
+        <button class="big-btn select-btn">Select This Book!</button>
+
+        <section class="form-div">
+          <%- include('../books/edit', {formAction: 'create', book: book }) %>
+        </section>
+      </li>
+      <% }); %>
+    </ul>
+
+  </main>
+  <footer>
+    <%- include('../../layout/footer') %>
+  </footer>
+  <%- include('../../layout/js-links') %>
+</body>
+
+</html>

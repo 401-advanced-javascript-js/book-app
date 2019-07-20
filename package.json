@@ -1,0 +1,30 @@
+{
+  "name": "book-app",
+  "version": "1.0.0",
+  "description": "Full-Stack JS application for books",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "lint": "eslint **/*.js",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose"
+  },
+  "author": "Jagdeep Singh",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "ejs": "^2.6.1",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4",
+    "jest": "^23.6.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.5.11",
+    "mongoose-schema-jsonschema": "^1.2.1",
+    "pg": "^7.9.0",
+    "superagent": "^4.1.0",
+    "supertest": "^3.3.0",
+    "swagger-ui-express": "^4.0.2",
+    "uuid": "^3.3.2"
+  }
+}
