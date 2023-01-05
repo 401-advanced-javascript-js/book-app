@@ -17,7 +17,7 @@
     "ejs": "^2.6.1",
     "eslint": "^5.16.0",
     "express": "^4.16.4",
-    "jest": "^23.6.0",
+    "jest": "^29.3.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.5.11",
     "mongoose-schema-jsonschema": "^1.2.1",
